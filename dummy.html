@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        menu=["gobi","cabbage","soya","mushroom"]
+        manchurian={}
+        taking1=prompt("what manchurian you need to have").toLowerCase()
+          manchurian['manchurian']= taking1
+        taking2=prompt('do you need to have masala; yes/no,').toLowerCase()
+        if(taking2=="yes"){
+         manchurian["masalatype"]= "masala"
+        }
+        else{
+         manchurian["masalatype"]= "nomasala"
+        }  
+          taking3=prompt("do you like to have extra spicey; yes/no,").toLowerCase()
+          if(taking3=="yes"){
+             manchurian["spiceytype"]= "spicey"
+            }
+            else{
+             manchurian["spiceytype"]= "nospicey"
+            }  
+          
+          taking4=prompt("do you like to hava extra onion; yes/no,").toLowerCase()
+          if(taking4=="yes"){
+             manchurian["oniontype"]= "onion"
+            }
+            else{
+             manchurian["oniontype"]= "no_onion"
+            }        
+       taking5=prompt("do you like to have a sauce on a side,yes/no").toLowerCase() 
+       if(taking5=="yes"){
+         manchurian["saucetype"]= "withsauce"
+        }
+        else{
+         manchurian["saucetype"]= "withoutsauce"
+        }    
+        taking6=prompt(" you can give your suggestion ,if you would like to,").toLowerCase()
+          manchurian["suggessation"]= taking6          
+        console.log(manchurian)          
+        function start(dish){
+             document.write('!!!')
+             dish()
+        }
+        function manchurian(){
+           document.write("it's getting ready")    
+        } 
+        function masala(){
+          document.write("masala is adding on your manchurian")   
+        } 
+        function nomasala(){
+         document.write("getting prepared without extra masala")
+        }
+        function spicey(){
+          document.write("spicey is adding on your manchurian")   
+        } 
+        function nospicey(){
+         document.write("you will be getting dish with normal spicey") 
+        }
+        function sauce(){
+          document.write("sauce is on your side ; enjoyyy!!!")   
+        } 
+        function nosauce(){
+         document.write(`${manchurian.manchurian}without sauce`)   
+       } 
+        function onion(){
+          document.write("with extra onion")   
+        } 
+        function no_onion(){
+         document.write("without extra onion")   
+       } 
+       function sauce(){
+         document.write("making the sauce in a delicious way!!")   
+       } 
+       function nosauce(){
+         document.write("making the manchurian without sauce")   
+       } 
+
+        function suggestion(){
+          document.write("your suggestion has taken forward ;thankyou for your time!!!") 
+        }
+        function needsauce(customer){
+          return new Promise((resolve,reject)=>{
+            if(customer=="yes"){
+              resolve()
+            }
+            else{
+              reject()
+            }
+          })
+        }
+        if(menu.includes(taking1)){
+          start(order)
+         setTimeout(()=>{((document.write("your order is ",manchurian.manchurian)))
+             document.write("<br")
+             setTimeout(()=>{
+                  document.write("kindly wait for minute")
+                  document.write("<br>")
+                  setTimeout(()=>{
+                      document.write("vegetables & incredients getting washed")
+                      document.write("<br>")
+                      setTimeout(()=>{
+                         document.write("cutting the vegies")
+                          document.write("<br>")
+                          setTimeout(()=>{
+                              document.write("frying the incredients")
+                              document.write("<br>")
+                              setTimeout(()=>{needsauce(taking5).then(()=>{document.write("making sauceee!!!!")}).catch(()=>{document.write("no sauce")})
+                              if(manchurian.masalatype=="masala"){
+                                 setTimeout(()=>{ menu(masala)
+                                 document.write("<br>")
+                                 setTimeout(()=>{
+                                     document.write("your dish is done")
+                                     document.write("<br>")
+                                     setTimeout(()=>{
+                                         document.write("thankyou")
+                                         document.write("<br>")
+                                     },7000)  
+                                 },6000)
+                             },5000)
+                            }
+                             else{
+                                 setTimeout(()=>{ menu(nomasala)
+                                     document.write("<br>") 
+                                     setTimeout(()=>{
+                                         document.write("your dish is done")
+                                         document.write("<br>")
+                                         setTimeout(()=>{
+                                             document.write("thankyou")
+                                             document.write("<br>")
+                                         },7000)
+                                     },6000)
+                                 },5000)
+                             }
+                            },5000)                                                                    
+                          },4000)
+                      },3500)
+                  },2500)
+             },1000)
+         },1000) 
+        }
+    
+      else{
+         setTimeout(()=>{
+             document.write("sorry!!!!we don't have any item like,",taking1)
+         },2000)
+      }
+         function order(){
+          document.write("your order has been placed;",taking1)
+          document.write("<br>")
+          document.write("your id=",   Math.floor(Math.random()*500))
+          document.write("<br>")
+          document.write("thankyou for your time")
+          document.write("<br>")
+       }
+    </script>
+</body>
+</html>

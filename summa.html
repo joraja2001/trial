@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        menu=["gobi","cabbage","soya","mushroom"]
+        manchurian={}
+        taking1=prompt("what manchurian you need to have").toLowerCase()
+          manchurian['manchurian']= taking1
+        taking2=prompt('do you need to have masala; yes/no,').toLowerCase()
+        if(taking2=="yes"){
+         manchurian["masalatype"]= "masala"
+        }
+        else{
+         manchurian["masalatype"]= "nomasala"
+        }  
+        setTimeout(()=>{
+            document.write("ordeer confirmed")
+            if(manchurian.masalatype=="masala"){
+                setTimeout(()=>{
+                    document.write("masalaaaa")
+                },2000)
+            }
+                else{
+                    setTimeout(()=>{
+                        document.write(" noooo   masalaaaaa")
+                    },2000)
+                }
+             
+            
+        },1000)
+    </script>
+</body>
+</html>
